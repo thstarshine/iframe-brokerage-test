@@ -1,0 +1,42 @@
+<html>
+<body>
+iframe test url: <input type="text" id="url" val="" size="70">
+
+<div style="display:flex; margin-top: 20px">
+  <div>
+<div style="font-weight:bold">Click name to test iframe:</div>
+<div><a href="#" id="b1">老虎證券</a> <font size="1">https://www.itiger.com/login</font></div>
+<div><a href="#" id="b2">玉山證券</a> <font size="1">https://cts.esunsec.com.tw</font></div>
+    <div><a href="#" id="b2">玉山證券(盤)</a> <font size="1">https://vipwq.moneydj.com/wq/appMain/index.aspx</font></div>
+<div><a href="#" id="b3">元大證券</a> <font size="1">https://etrade.yuanta.com.tw/tsweb/LoginITS.asp</font></div>
+<div><a href="#" id="b3">元大證券(盤)</a> <font size="1">https://etrade.yuanta.com.tw/tsweb/default.asp</font></div>
+<div><a href="#" id="b4">台新證券</a> <font size="1">https://tssweb.tssco.com.tw/TSSWeb/Weblogin.aspx</font></div>
+<div><a href="#" id="b5">國泰證券</a> <font size="1">https://iweb.cathaysec.com.tw/portal/</font></div>
+<div><a href="#" id="b6">新光證券</a> <font size="1">https://webap.sk88.com.tw/#/login</font></div>
+<div><a href="#" id="b7">中信證券</a> <font size="1">https://www.win168.com.tw/ctsweb/WebLogin.aspx</font></div>
+<div><a href="#" id="b8">富邦證券</a> <font size="1">https://www.fubon-ebroker.com/fbs/page_201.fs</font></div>
+<div><a href="#" id="b9">永豐證券</a> <font size="1">https://eztrade.sinopac.com.tw</font></div>
+<br><br>
+  </div>
+  <div style="margin-left: 80px">
+<iframe src="" id="iframe" width="1024" height="800"></iframe>
+  </div>
+</div>
+
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+$(document).ready(function() {
+  $('#url').on('change', function() {
+    $('#iframe').prop('src', $(this).val());
+  });
+  $('a').on('click', function() {
+    var url = $(this).siblings('font').html();
+    console.log(url);
+    $('#url').val(url).trigger('change');
+  });
+});
+
+</script>
+
+</html>
